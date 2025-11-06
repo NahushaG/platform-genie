@@ -1,0 +1,9 @@
+spring:
+  application:
+    name=backend
+  ai:
+    openai:
+      enabled: false
+      audio:
+        enabled: false
+      api-key: dummy
