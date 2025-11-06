@@ -25,12 +25,13 @@ The platform leverages AI to interpret the user input and automatically generate
 The tool produces a downloadable ZIP file containing all generated files. Users can customize the deployment by editing parameters exposed through property/configuration files before deploying their application.
 
 ## Directory Structure (Initial Setup - Subject to change)
+```text
 platform-genie/
 ├── backend/
 │   ├── Dockerfile
 │   ├── src/
 │   ├── pom.xml
-│   └── specs/          # Example YAML/JSON input specs
+│   └── specs/           # Example YAML/JSON input specs
 ├── frontend/
 │   ├── Dockerfile
 │   ├── package.json
