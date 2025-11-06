@@ -1,9 +1,12 @@
 spring:
   application:
-    name=backend
+    name: backend
+
   ai:
     openai:
-      enabled: false
-      audio:
-        enabled: false
-      api-key: dummy
+      enabled: true
+      api-key: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      text:
+        model: gpt-4
+      chat:
+        model: gpt-4
