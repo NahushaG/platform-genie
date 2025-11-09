@@ -19,8 +19,8 @@ public class OrchestrationController {
 
     @PostMapping("/deploy")
     public ResponseEntity<String> deployJson(@RequestBody InfraSpec infraSpec,
-                                             @RequestParam String outputDir,
-                                             @RequestParam String environment) {
+                                             @RequestParam("outputDir") String outputDir,
+                                             @RequestParam("environment") String environment) {
         InfraSpec spec = infraSpecMapper.fromJson(infraSpec);
         Path zipPath = orchestrationService.generateAndDeliverInfra(spec, outputDir, environment);
         return ResponseEntity.ok("Infrastructure delivered successfully: " + zipPath.toAbsolutePath());
@@ -28,8 +28,8 @@ public class OrchestrationController {
 
     @PostMapping(value = "/deploy/yaml", consumes = "application/x-yaml")
     public ResponseEntity<String> deployYaml(@RequestBody String yaml,
-                                             @RequestParam String outputDir,
-                                             @RequestParam String environment) {
+                                             @RequestParam("outputDir") String outputDir,
+                                             @RequestParam("environment") String environment) {
         InfraSpec spec = infraSpecMapper.fromYaml(yaml);
         Path zipPath = orchestrationService.generateAndDeliverInfra(spec, outputDir, environment);
         return ResponseEntity.ok("Infrastructure delivered successfully: " + zipPath.toAbsolutePath());
